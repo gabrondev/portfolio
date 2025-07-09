@@ -8,7 +8,9 @@ export default function Menu() {
     return (
         <nav className="flex gap-6">
             <MenuItem href="/" selecionado={caminho === "/"}>Início</MenuItem>
-            <MenuItem href="/projeto/1" selecionado={caminho.startsWith("/projeto")}>Projetos</MenuItem>
+            <MenuItem href="/projetos" selecionado={caminho.startsWith("/projeto")}>Projetos</MenuItem>
+            <MenuItem href="https://github.com/gabrondev" selecionado={false} novaAba>GitHub</MenuItem>
+            <MenuItem href="https://drive.google.com/file/d/1iJuvzGqqcIpyOV06VxYPVEDgTN0ixcIP/view" selecionado={false} novaAba>Currículo</MenuItem>
             <MenuItem href="https://api.whatsapp.com/send/?phone=5511934391251&text&type=phone_number" selecionado={false} novaAba>Contato</MenuItem>
         </nav>
     )

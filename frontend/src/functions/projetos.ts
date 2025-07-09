@@ -12,12 +12,12 @@ export async function obterProjetos() {
         get web() {
             return projetos.filter(projeto => projeto.tipo === Tipo.WEB)
         },
-        get jogos() {
-            return projetos.filter(projeto => projeto.tipo === Tipo.JOGO)
+        get desktop() {
+            return projetos.filter(projeto => projeto.tipo === Tipo.DESKTOP)
         },
         get destaques() {
             return projetos.filter(projeto => projeto.destaque)
-        },
+        }
     }
 }
 

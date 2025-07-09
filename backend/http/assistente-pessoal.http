@@ -1,7 +1,1 @@
-POST https://gabron.app.n8n.cloud/webhook/assistente-pessoal
-Content-Type: application/json
-
-{
-    "chatId": "1234567890",
-    "mensagem": "E com TypeScript?"
-}
+GET http://localhost:4000/projetos/0

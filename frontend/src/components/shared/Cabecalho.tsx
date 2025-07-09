@@ -19,7 +19,7 @@ export default function Cabecalho() {
                         target="_blank"
                         className="bg-red-500 rounded-full px-7 py-1 text-sm font-bold"
                     >
-                        Perfil
+                        LinkedIn
                     </Link>
                 </div>
             </Container>

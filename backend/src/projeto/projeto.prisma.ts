@@ -7,7 +7,10 @@ export class ProjetoPrisma {
     constructor(private readonly prisma: PrismaProvider) { }
 
     async obterTodos(): Promise<Projeto[]> {
-        return this.prisma.projeto.findMany() as any
+        return this.prisma.projeto.findMany({
+            include: { tecnologias: true }
+        }
+        ) as any
     }
 
     async obterPorId(id: number): Promise<Projeto | null> {

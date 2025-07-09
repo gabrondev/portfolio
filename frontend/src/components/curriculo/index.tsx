@@ -1,18 +1,17 @@
-import { Tecnologia } from "@core";
-import TecnologiasTrabalhadas from "./TecnologiasTrabalhadas";
-// import Experiencia from "./Experiencia";
-import MiniCV from "./MiniCV";
+import Formacao from "./Formacao"
+import SobreMim from "./SobreMim"
+import TecnologiasTrabalhadas from "./TecnologiasTrabalhadas"
 
-export interface CurriculoProps {
-    tecnologias: Tecnologia[]
-}
-
-export default function Curriculo(props: CurriculoProps) {
+export default function Curriculo() {
     return (
-        <div className="flex flex-col lg:flex-row gap-4 min-h-72 w-full">
-            <MiniCV />
-            {/* <Experiencia /> */}
-            <TecnologiasTrabalhadas lista={props.tecnologias} />
+        <div className="
+            flex flex-col gap-5 items-center 
+            sm:items-start w-7/10 md:11/12 
+            xl:flex-row xl:w-full xl:items-stretch
+        ">
+            <SobreMim />
+            <Formacao />
+            <TecnologiasTrabalhadas />
         </div>
     )
 }

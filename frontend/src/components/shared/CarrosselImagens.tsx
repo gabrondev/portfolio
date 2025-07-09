@@ -1,8 +1,10 @@
 import Image from "next/image"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel"
+import Link from "next/link"
 
 export interface CarrosselImagensProps {
-    imagens: string[]
+    imagens: string[],
+    link?: string
 }
 
 export default function CarrosselImagens(props: CarrosselImagensProps) {
@@ -11,7 +13,14 @@ export default function CarrosselImagens(props: CarrosselImagensProps) {
             <CarouselContent>
                 {props.imagens.map((imagem) => (
                     <CarouselItem key={imagem} className="relative h-96 w-full">
-                        <Image src={imagem} alt={"Imagem"} fill className="object-cover" />
+                        {props.link ? (
+                            <Link href={props.link}>
+                                <Image src={imagem} alt={"Imagem"} fill className="object-cover" />
+                            </Link>
+                        ) :
+                            (
+                                <Image src={imagem} alt={"Imagem"} fill className="object-cover" />
+                            )}
                     </CarouselItem>
                 ))}
             </CarouselContent>
