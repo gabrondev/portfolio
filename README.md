@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="./.gitassets/capa.png" width="350px">
+<img src="https://github.com/gabrondev/portfolio/raw/main/.gitassets/capa.png" width="350px">
 
 <div data-badges>
     <img src="https://img.shields.io/github/stars/gabrondev/portfolio?style=for-the-badge" alt="GitHub stars" />
@@ -86,7 +86,7 @@ Além de apresentar meus projetos, a aplicação incorpora agentes de IA intelig
 -   Lista de tecnologias dos projetos
 -   Buscar os projetos por Id com as tecnologias associadas
 
-![](./.gitassets/2.png)   
+![](https://github.com/gabrondev/portfolio/raw/main/.gitassets/2.png)   
 
 ## 💎 Links úteis 💎
 
