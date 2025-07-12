@@ -19,4 +19,10 @@ export class ProjetoPrisma {
             include: { tecnologias: true }
         }) as any
     }
+
+    async listarIds(): Promise<{ id: number }[]> {
+        return this.prisma.projeto.findMany({
+            select: { id: true },
+        });
+    }
 }

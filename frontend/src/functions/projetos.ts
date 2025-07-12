@@ -24,3 +24,7 @@ export async function obterProjetos() {
 export async function obterProjeto(id: string): Promise<Projeto | null> {
     return await httpGet(`/projetos/${id}`)
 }
+
+export async function listarIds() {
+    return await httpGet('/projetos/ids')
+}

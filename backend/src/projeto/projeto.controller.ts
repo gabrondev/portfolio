@@ -11,8 +11,15 @@ export class ProjetoController {
         return this.repo.obterTodos()
     }
 
+    @Get("ids")
+    async listarIds(): Promise<{ id: string }[]> {
+        const ids = await this.repo.listarIds();
+        return ids.map(projeto => ({ id: projeto.id.toString() }));
+    }
+
     @Get(":id")
     async obterPorId(@Param("id") id: string): Promise<Projeto | null> {
         return this.repo.obterPorId(Number(id))
     }
+
 }
