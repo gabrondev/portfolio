@@ -38,3 +38,14 @@ model Projeto {
 
   @@map("projetos")
 }
+
+model Post {
+  id           Int      @id @default(autoincrement())
+  titulo       String
+  slug         String   @unique
+  conteudo     String
+  criadoEm     DateTime @default(now())
+  atualizadoEm DateTime @default(now()) @updatedAt
+
+  @@map("posts")
+}
