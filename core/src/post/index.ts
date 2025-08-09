@@ -1,3 +1,4 @@
 import Post from "./Post";
+import { Tag } from "./Tag";
 
-export type { Post };
+export type { Post, Tag };
