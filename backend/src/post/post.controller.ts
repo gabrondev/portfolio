@@ -1,6 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { PostPrisma } from './post.prisma';
-import { Post } from '@core';
+import { Post, Tag } from '@core';
 
 @Controller('posts')
 export class PostController {
@@ -9,6 +9,16 @@ export class PostController {
     @Get()
     async obterTodos(): Promise<Post[]> {
         return this.repo.obterTodos();
+    }
+
+    @Get('recentes')
+    async obterMaisRecentes(): Promise<Post[]> {
+        return this.repo.obterMaisRecentes();
+    }
+
+    @Get('tags')
+    async obterTags(): Promise<Tag[]> {
+        return this.repo.obterTags();
     }
 
     @Get(':slug')

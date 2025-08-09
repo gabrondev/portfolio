@@ -21,8 +21,30 @@ model Tecnologia {
   imagem    String
   destaque  Boolean   @default(false)
   projetos  Projeto[]
+  posts     Post[]
 
   @@map("tecnologias")
+}
+
+model Tag {
+  id    Int    @id @default(autoincrement())
+  nome  String @unique
+  posts Post[]
+
+  @@map("tags")
+}
+
+model Post {
+  id          Int          @id @default(autoincrement())
+  titulo      String
+  subtitulo   String       @default("")
+  slug        String       @unique
+  conteudo    String
+  criadoEm    DateTime     @default(now())
+  tags        Tag[]
+  tecnologias Tecnologia[]
+
+  @@map("posts")
 }
 
 model Projeto {
@@ -37,15 +59,4 @@ model Projeto {
   tecnologias Tecnologia[]
 
   @@map("projetos")
-}
-
-model Post {
-  id           Int      @id @default(autoincrement())
-  titulo       String
-  slug         String   @unique
-  conteudo     String
-  criadoEm     DateTime @default(now())
-  atualizadoEm DateTime @default(now()) @updatedAt
-
-  @@map("posts")
 }
