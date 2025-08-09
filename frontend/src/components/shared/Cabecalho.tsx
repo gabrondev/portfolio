@@ -5,7 +5,7 @@ import Menu from "./Menu";
 
 export default function Cabecalho() {
     return (
-        <header className="w-full flex items-center h-16 bg-black/50">
+        <header className="w-full flex items-center h-16 bg-black/50 backdrop-blur-sm fixed top-0 left-0 right-0 z-[9999] border border-zinc-900">
             <Container className="flex-1 flex justify-center sm:justify-between items-center">
                 <div className="flex items-center gap-10">
                     <Link href="/" className="hidden sm:block">

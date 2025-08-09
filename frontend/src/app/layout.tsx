@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfólio",
+  title: "GabronDEV",
   description: "Portfólio GabronDEV",
 };
 

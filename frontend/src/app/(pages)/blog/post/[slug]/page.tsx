@@ -1,6 +1,4 @@
-import Readme from "@/components/projetos/Readme";
-import Cabecalho from "@/components/shared/Cabecalho";
-import Container from "@/components/shared/Container";
+import Post from "@/components/blog/Post";
 import { obterPostPorSlug } from "@/functions/posts";
 
 export default async function PaginaPost(props: { params: Promise<{ slug: string }> }) {
@@ -10,12 +8,12 @@ export default async function PaginaPost(props: { params: Promise<{ slug: string
     if (!post) return null
 
     return (
-        <div className="bg-black">
-            <Cabecalho />
-            <Container className="py-7 flex flex-col flex-1 items-center gap-10">
-                <h1 className="text-3xl font-bold self-start">{post.titulo}</h1>
-                <Readme markdown={post.conteudo} />
-            </Container>
-        </div>
+        <Post
+            titulo={post.titulo}
+            subtitulo={post.subtitulo}
+            conteudo={post.conteudo}
+            tags={post.tags}
+            criadoEm={post.criadoEm}
+        />
     )
 }

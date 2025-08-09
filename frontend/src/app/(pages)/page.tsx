@@ -1,5 +1,6 @@
 import Curriculo from "@/components/curriculo";
 import Principal from "@/components/landing/Principal";
+import UltimosPosts from "@/components/landing/UltimosPosts";
 import CarrosselProjetos from "@/components/projetos/CarrosselProjetos";
 import Container from "@/components/shared/Container";
 import { obterProjetos } from "@/functions/projetos";
@@ -14,6 +15,7 @@ export default async function Home() {
     <div>
       <Principal tecnologias={tecnologias.destaques} />
       <Container className="py-16 flex flex-col items-center gap-10">
+        <UltimosPosts />
         <CarrosselProjetos titulo="Projetos" lista={projetos.destaques} />
         <Curriculo />
       </Container>

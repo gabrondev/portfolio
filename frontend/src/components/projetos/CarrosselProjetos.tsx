@@ -1,6 +1,7 @@
 import { Projeto } from "@core";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
 import ItemCarrosselProjetos from "./ItemCarrosselProjetos";
+import { IconTools } from "@tabler/icons-react";
 
 export interface ProjetosProps {
     titulo: string
@@ -10,7 +11,10 @@ export interface ProjetosProps {
 export default function CarrosselProjetos(props: ProjetosProps) {
     return (
         <div className="flex flex-col gap-5 items-center sm:items-start w-7/10 md:11/12 xl:w-full ">
-            <h3 className="text-2xl font-bold text-white/70">{props.titulo}</h3>
+            <div className="flex text-2xl font-bold gap-1 items-center">
+                <IconTools size={28} />
+                <h3 >{props.titulo}</h3>
+            </div>
             <Carousel
                 opts={{
                     align: "center",
