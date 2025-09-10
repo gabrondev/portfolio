@@ -2,6 +2,8 @@ import ListaPosts from "@/components/blog/ListaPosts";
 import Container from "@/components/shared/Container";
 import { obterPosts } from "@/functions/posts";
 
+export const revalidate = 3600
+
 export default async function PaginaBlog() {
     const posts = await obterPosts();
 

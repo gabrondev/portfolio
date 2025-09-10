@@ -1,7 +1,8 @@
 import { Projeto } from "@core";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
 import ItemCarrosselProjetos from "./ItemCarrosselProjetos";
-import { IconTools } from "@tabler/icons-react";
+import { IconArrowRight, IconTools } from "@tabler/icons-react";
+import Link from "next/link";
 
 export interface ProjetosProps {
     titulo: string
@@ -32,6 +33,10 @@ export default function CarrosselProjetos(props: ProjetosProps) {
                 <CarouselPrevious />
                 <CarouselNext />
             </Carousel>
+            <Link className="flex gap-1 self-end" href={'/projetos'}>
+                <span className="">Ver projetos</span>
+                <IconArrowRight stroke={1} />
+            </Link>
         </div>
     )
 }

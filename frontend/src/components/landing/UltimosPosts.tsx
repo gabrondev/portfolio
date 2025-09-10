@@ -7,14 +7,17 @@ export default async function UltimosPosts() {
     const posts = await obterPostsMaisRecentes()
 
     return (
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col w-7/10 md:11/12 xl:w-full gap-5">
             <div className="flex text-2xl font-bold items-center gap-1">
                 <IconNews size={28} />
                 <h1>Últimos Posts</h1>
             </div>
-            <div className="grid grid-cols-3 gap-3 items-stretch">
+
+            <div className="flex flex-col xl:grid xl:grid-cols-3 xl:items-stretch gap-3 self-center
+                            ">
                 {posts.map(post => (
-                    <PostCard key={post.id}
+                    <PostCard
+                        key={post.id}
                         titulo={post.titulo}
                         subtitulo={post.subtitulo}
                         criadoEm={post.criadoEm}
@@ -23,8 +26,9 @@ export default async function UltimosPosts() {
                     />
                 ))}
             </div>
+
             <Link className="flex gap-1 self-end" href={'/blog'}>
-                <span className="">Ver blog</span>
+                <span>Ver blog</span>
                 <IconArrowRight stroke={1} />
             </Link>
         </div>

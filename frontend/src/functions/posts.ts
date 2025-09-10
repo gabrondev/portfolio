@@ -18,3 +18,7 @@ export async function obterTags() {
     const tags: Tag[] = await httpGet('/posts/tags')
     return tags
 }
+
+export async function listarSlugs() {
+    return await httpGet('/posts/slugs')
+}
