@@ -16,7 +16,8 @@ export class RevalidateController {
         }
 
         try {
-            const nextUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/revalidate`;
+            const baseUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "");
+            const nextUrl = `${baseUrl}/api/revalidate`;
 
             const res = await fetch(nextUrl, {
                 method: 'POST',
