@@ -10,7 +10,14 @@ export class PostPrisma {
     async obterTodos(): Promise<Post[]> {
         return this.prisma.post.findMany({
             orderBy: { criadoEm: 'desc' },
-            include: { tags: true }
+            select: {
+                id: true,
+                titulo: true,
+                subtitulo: true,
+                slug: true,
+                criadoEm: true,
+                tags: true
+            }
         }) as any;
     }
 
@@ -31,6 +38,12 @@ export class PostPrisma {
 
     async obterTags(): Promise<Tag[]> {
         return this.prisma.tag.findMany();
+    }
+
+    async listarSlugs(): Promise<{ slug: string }[]> {
+        return this.prisma.post.findMany({
+            select: { slug: true }
+        });
     }
 }
 

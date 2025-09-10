@@ -21,6 +21,12 @@ export class PostController {
         return this.repo.obterTags();
     }
 
+    @Get('slugs')
+    async listarSlugs(): Promise<{ slug: string }[]> {
+        const slugs = await this.repo.listarSlugs()
+        return slugs
+    }
+
     @Get(':slug')
     async obterPorSlug(@Param('slug') slug: string): Promise<Post | null> {
         return this.repo.obterPorSlug(slug);
