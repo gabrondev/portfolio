@@ -9,8 +9,6 @@ export async function generateStaticParams() {
     return await listarIds();
 }
 
-// export const revalidate = 3600
-
 export default async function PaginaProjeto(props: { params: Promise<{ id: string }> }) {
     const params = await props.params
     const { id } = params;
