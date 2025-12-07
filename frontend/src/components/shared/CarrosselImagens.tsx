@@ -12,7 +12,7 @@ export default function CarrosselImagens(props: CarrosselImagensProps) {
         <Carousel opts={{ loop: true }} className="w-7/10 md:w-11/12 xl:w-full">
             <CarouselContent>
                 {props.imagens.map((imagem) => (
-                    <CarouselItem key={imagem} className="relative h-96 w-full">
+                    <CarouselItem key={imagem} className="relative h-96 w-full rounded-xl">
                         {props.link ? (
                             <Link href={props.link}>
                                 <Image src={imagem} alt={"Imagem"} fill className="object-cover" />

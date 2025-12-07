@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Tecnologias from "../tecnologias/Tecnologias";
-import CarrosselImagens from "../shared/CarrosselImagens";
 import { Projeto } from "@core";
+import Image from "next/image";
+import { IconBrandGithubFilled } from "@tabler/icons-react";
 
 interface ItemListaProjetosProps {
     projeto: Projeto
@@ -11,16 +11,28 @@ export default async function ItemListaProjetos(props: ItemListaProjetosProps) {
     const projeto = props.projeto
 
     return (
-        <div className="bg-black border border-zinc-800 rounded-2xl px-6 pt-6">
-            <CarrosselImagens imagens={projeto.imagens.slice(1)} link={`/projeto/${projeto.id}`} />
-
-            <div className="flex flex-col items-center gap-1 py-3">
-                <Link href={`/projeto/${projeto.id}`}>
-                    <h3 className="text-xl font-bold text-white/70">{projeto.nome}</h3>
+            <div className="
+                flex flex-col h-full bg-zinc-50 shadow-sm p-6 rounded-xl
+                transition-all duration-200
+                hover:-translate-y-1 hover:bg-zinc-200 hover:shadow-md 
+            ">
+                <Link className="flex h-full" href={`/projeto/${projeto.id}`}>
+                    <div className="flex flex-col items-center gap-1 py-3">
+                        <Image className="rounded-xl" src={projeto.imagens[0]} alt="Logo do projeto." height={180} width={180}/>
+                        <h3 className="text-xl font-bold">{projeto.nome}</h3>
+                        <p className="text-sm flex-1">{projeto.descricao}</p>
+                    </div>
                 </Link>
-                <p className="text-justify">{projeto.descricao}</p>
-                <Tecnologias lista={projeto.tecnologias} tamanhoMenor />
-            </div>
+
+                <Link 
+                    href={projeto.repositorio} 
+                    target="_blank" 
+                    className="flex self-center text-sm gap-0.5 transition-all hover:-translate-y-1"
+                >
+                    <IconBrandGithubFilled size={20}/>
+                    Repositório
+                </Link>
+            
         </div>
     )
 }

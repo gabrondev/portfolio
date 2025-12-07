@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import Cabecalho from "@/components/shared/Cabecalho";
+import Rodape from "@/components/landing/Rodape";
+import IrAoTopo from "@/components/shared/IrAoTopo";
+
 
 export const metadata: Metadata = {
   title: "GabronDEV",
   description: "Portfólio GabronDEV",
 };
 
-const fonte = Montserrat({
+const fonte = Poppins({
   subsets: ["latin"],
-})
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export default function RootLayout({
   children,
@@ -18,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${fonte.className} antialiased`}>{children}</body>
+      <body className={`${fonte.className} antialiased`}>
+      <Cabecalho />
+      {children}
+      <Rodape/>
+      <IrAoTopo/>
+      </body>
     </html>
   );
 }

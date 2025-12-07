@@ -19,7 +19,7 @@ export default function Tecnologias(props: TecnologiasProps) {
                         >
                             <Image src={tecnologia.imagem} alt={tecnologia.nome} fill className="object-contain" />
                         </span>
-                        <span className="text-[10px] text-zinc-400">{tecnologia.nome}</span>
+                        <span className="text-[10px]">{tecnologia.nome}</span>
                     </div>
                 ))}
             </div>

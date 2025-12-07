@@ -1,25 +1,21 @@
-import Curriculo from "@/components/curriculo";
 import Principal from "@/components/landing/Principal";
+import ProjetosDestaque from "@/components/landing/ProjetosDestaque";
 import UltimosPosts from "@/components/landing/UltimosPosts";
-import CarrosselProjetos from "@/components/projetos/CarrosselProjetos";
 import Container from "@/components/shared/Container";
 import { obterProjetos } from "@/functions/projetos";
-import { obterTecnologias } from "@/functions/tecnologias";
 
 export const revalidate = 3600
 
 export default async function Home() {
 
-  const tecnologias = await obterTecnologias()
   const projetos = await obterProjetos()
 
   return (
     <div>
-      <Principal tecnologias={tecnologias.destaques} />
-      <Container className="py-16 flex flex-col items-center gap-10">
+      <Container className="flex flex-col items-center gap-10 transition-all duration-200">
+        <Principal/>
         <UltimosPosts />
-        <CarrosselProjetos titulo="Projetos" lista={projetos.destaques} />
-        <Curriculo />
+        <ProjetosDestaque titulo="Projetos Destaque" lista={projetos.destaques}/>
       </Container>
     </div>
   );

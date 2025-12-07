@@ -3,7 +3,7 @@ declare module "react-syntax-highlighter" {
     export const Prism: ComponentType<{ [key: string]: unknown }>
 }
 
-declare module "react-syntax-highlighter/dist/esm/styles/prism/atom-dark" {
-    const atomDark: Record<string, unknown>
-    export default atomDark
+declare module "react-syntax-highlighter/dist/esm/styles/prism/coy" {
+    const tema: Record<string, unknown>
+    export default tema
 }

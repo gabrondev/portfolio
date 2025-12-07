@@ -3,6 +3,7 @@ import PostCard from "./PostCard";
 
 interface ListaPostsProps {
     posts: Post[]
+    verProjetos?: boolean
 }
 
 export default function ListaPosts(props: ListaPostsProps) {
