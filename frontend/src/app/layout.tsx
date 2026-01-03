@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Cabecalho from "@/components/shared/Cabecalho";
-import Rodape from "@/components/landing/Rodape";
 import IrAoTopo from "@/components/shared/IrAoTopo";
 
 
@@ -24,10 +22,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${fonte.className} antialiased`}>
-      <Cabecalho />
-      {children}
-      <Rodape/>
-      <IrAoTopo/>
+        {children}
+        <IrAoTopo/>
       </body>
     </html>
   );
