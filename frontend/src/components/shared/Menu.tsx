@@ -1,16 +1,16 @@
 "use client"
-import { usePathname } from "next/navigation"
+import { useSelectedLayoutSegment } from "next/navigation"
 import Link from "next/link"
 import { IconHome, IconNews, IconTools } from "@tabler/icons-react"
 
 export default function Menu() {
-    const caminho = usePathname()
+    const caminho = useSelectedLayoutSegment()
 
     return (
         <nav className="flex gap-6">
-            <MenuItem href="/" selecionado={caminho === "/"}><IconHome size={16}/>Home</MenuItem>
-            <MenuItem href="/blog" selecionado={caminho.startsWith("/blog")}><IconNews size={16}/>Blog</MenuItem>
-            <MenuItem href="/projetos" selecionado={caminho.startsWith("/projeto")}><IconTools size={16}/>Projetos</MenuItem>
+            <MenuItem href="/" selecionado={caminho === null}><IconHome size={16}/>Home</MenuItem>
+            <MenuItem href="/blog" selecionado={caminho === "blog"}><IconNews size={16}/>Blog</MenuItem>
+            <MenuItem href="/projetos" selecionado={caminho === "projeto" || caminho === "projetos"}><IconTools size={16}/>Projetos</MenuItem>
         </nav>
     )
 }
